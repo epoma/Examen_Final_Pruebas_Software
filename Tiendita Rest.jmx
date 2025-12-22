@@ -20,7 +20,7 @@
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Categoria"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Categoria" enabled="true"/>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="findAll" enabled="true">
             <stringProp name="HTTPSampler.domain">${url}</stringProp>
@@ -218,7 +218,7 @@
           </ResultCollector>
           <hashTree/>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Cliente"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Cliente" enabled="true"/>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="findAll" enabled="true">
             <stringProp name="HTTPSampler.domain">${url}</stringProp>
@@ -416,7 +416,7 @@
           </ResultCollector>
           <hashTree/>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="DetallePedido"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="DetallePedido" enabled="true"/>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="findAll" enabled="true">
             <stringProp name="HTTPSampler.domain">${url}</stringProp>
@@ -614,7 +614,7 @@
           </ResultCollector>
           <hashTree/>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Distrito"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Distrito" enabled="true"/>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="findAll" enabled="true">
             <stringProp name="HTTPSampler.domain">${url}</stringProp>
@@ -812,7 +812,7 @@
           </ResultCollector>
           <hashTree/>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Producto"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Producto" enabled="true"/>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="findAll" enabled="true">
             <stringProp name="HTTPSampler.domain">${url}</stringProp>
@@ -1010,7 +1010,7 @@
           </ResultCollector>
           <hashTree/>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Rol"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Rol" enabled="true"/>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="findAll" enabled="true">
             <stringProp name="HTTPSampler.domain">${url}</stringProp>
@@ -1208,7 +1208,7 @@
           </ResultCollector>
           <hashTree/>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="TicketPedido"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="TicketPedido" enabled="true"/>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="findAll" enabled="true">
             <stringProp name="HTTPSampler.domain">${url}</stringProp>
@@ -1406,7 +1406,7 @@
           </ResultCollector>
           <hashTree/>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Usuario"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Usuario" enabled="true"/>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="findAll" enabled="true">
             <stringProp name="HTTPSampler.domain">${url}</stringProp>
@@ -1604,7 +1604,7 @@
           </ResultCollector>
           <hashTree/>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="UsuarioRol"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="UsuarioRol" enabled="true"/>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="findAll" enabled="true">
             <stringProp name="HTTPSampler.domain">${url}</stringProp>
@@ -1802,15 +1802,15 @@
           </ResultCollector>
           <hashTree/>
         </hashTree>
-        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="Peticion por defecto Http" enabled="true">
-          <stringProp name="HTTPSampler.port">8080</stringProp>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="Peticion por defecto Http">
+          <stringProp name="HTTPSampler.port">8087</stringProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
           <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
         </ConfigTestElement>
         <hashTree/>
-        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables definidas por el usuario" enabled="true">
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables definidas por el usuario">
           <collectionProp name="Arguments.arguments">
             <elementProp name="url" elementType="Argument">
               <stringProp name="Argument.name">url</stringProp>
