@@ -1,0 +1,9 @@
+url									localhost
+mostrar_categoria					http://localhost:8097/tiendita/categoria
+mostrar_categoria_personalizada		http://localhost:8097/tiendita/categoria/custom
+buscar_categoria_codigo				http://localhost:8097/tiendita/categoria/1
+id									2
+registrar_categoria					http://localhost:8097/tiendita/categoria
+actualizar_categoria				http://localhost:8097/tiendita/categoria
+eliminar_categoria					http://localhost:8097/tiendita/categoria
+
