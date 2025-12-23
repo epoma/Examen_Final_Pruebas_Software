@@ -2,47 +2,47 @@ package pe.com.almacen.service.impl;
 
 import java.util.List;
 import java.util.Optional;
-import pe.com.almacen.entity.ProductoEntity;
-import pe.com.almacen.repository.ProductoRepository;
-import pe.com.almacen.service.ProductoService;
+import pe.com.almacen.entity.ProductosEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pe.com.almacen.repository.ProductosRepository;
+import pe.com.almacen.service.ProductosService;
 
 @Service
-public class ProductoServiceImpl implements ProductoService {
+public class ProductosServiceImpl implements ProductosService {
 
     @Autowired
-    private ProductoRepository productoRepository;
+    private ProductosRepository productoRepository;
 
     @Override
-    public List<ProductoEntity> findAll() {
+    public List<ProductosEntity> findAll() {
         return productoRepository.findAll();
     }
 
     @Override
-    public List<ProductoEntity> findAllCustom() {
+    public List<ProductosEntity> findAllCustom() {
         return productoRepository.findAllCustom();
     }
 
     @Override
-    public ProductoEntity findById(Integer id) {
-        Optional<ProductoEntity> producto = productoRepository.findById(id);
+    public ProductosEntity findById(Integer id) {
+        Optional<ProductosEntity> producto = productoRepository.findById(id);
         return producto.orElse(null);
     }
 
     @Override
-    public ProductoEntity save(ProductoEntity producto) {
+    public ProductosEntity save(ProductosEntity producto) {
         return productoRepository.save(producto);
     }
 
     @Override
-    public ProductoEntity update(ProductoEntity producto) {
+    public ProductosEntity update(ProductosEntity producto) {
         return productoRepository.save(producto);
     }
 
     @Override
     public void delete(Integer id) {
-        ProductoEntity producto = findById(id);
+        ProductosEntity producto = findById(id);
         if (producto != null) {
             producto.setEstado(0); // eliminado lógico
             productoRepository.save(producto);

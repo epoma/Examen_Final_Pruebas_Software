@@ -12,7 +12,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ProductoEntity implements Serializable {
+public class ProductosEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

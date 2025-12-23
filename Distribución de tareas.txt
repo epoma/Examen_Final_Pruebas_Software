@@ -9,17 +9,45 @@ Integrantes
 -----------------------------------------------------------------
 Pruebas de JMetter de "TienditaRest"	
 -----------------------------------------------------------------		
-1	Categoria		Arnold
-2	Cliente		Arnold
+1	Categoria			Arnold
+2	Cliente				Arnold
 3	DetallePedido		Edgar
-4	Distrito		Edgar
-5	Producto		Edwin
-6	Rol		Edwin
+4	Distrito			Edgar
+5	Producto			Edwin
+6	Rol					Edwin
 7	TicketPedido		Pool
-8	Usuario		Pool
-9	UsuarioRol		Ronald
+8	Usuario				Pool
+9	UsuarioRol			Ronald
 -----------------------------------------------------------------			
 Servicio Rest API con las pruebas unitarias "Almacenes Libertad"
+-----------------------------------------------------------------
+Base de tados con 6 Tablas
+	almacenes
+	empleados
+	movimientos
+	productos
+	proveedores
+	tipo_movimiento
+
+PACKAGES:
+	entity
+		AlmacenesEntity
+		EmpleadosEntity
+		MovimientosEntity
+		ProductosEntity
+		ProveedoresEntity
+		MovimientoEntity
+	respository		
+	
+	restcontroller	
+	
+	service			
+	
+	impl			
+
+
+
+
 -----------------------------------------------------------------
 Pruebas de JMetter de "Almacenes Libertad"		
 -----------------------------------------------------------------
