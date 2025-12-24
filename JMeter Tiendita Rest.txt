@@ -1,0 +1,63 @@
+id	2	
+http://localhost:8097/tiendita/categoria
+mostrar_categoria					/tiendita/categoria	
+buscar_categoria_codigo				/tiendita/categoria/	
+registrar_categoria					/tiendita/categoria	
+actualizar_categoria				/tiendita/categoria/	
+eliminar_categoria					/tiendita/categoria/	
+
+http://localhost:8097/tiendita/cliente
+mostrar_cliente						/tiendita/cliente	
+buscar_cliente_codigo				/tiendita/cliente/	
+registrar_cliente					/tiendita/cliente	
+actualizar_cliente					/tiendita/cliente/	
+eliminar_cliente					/tiendita/cliente/
+
+http://localhost:8097/tiendita/detallepedido
+mostrar_detallepedido				/tiendita/detallepedido	
+buscar_detallepedido_codigo			/tiendita/detallepedido/	
+registrar_detallepedido				/tiendita/detallepedido	
+actualizar_detallepedido			/tiendita/detallepedido/	
+eliminar_detallepedido				/tiendita/detallepedido/
+
+http://localhost:8097/tiendita/distrito
+mostrar_distrito					/tiendita/distrito	
+buscar_distrito_codigo				/tiendita/distrito/	
+registrar_distrito					/tiendita/distrito	
+actualizar_distrito					/tiendita/distrito/	
+eliminar_distrito					/tiendita/distrito/
+
+http://localhost:8097/tiendita/producto
+mostrar_producto					/tiendita/producto	
+buscar_producto_codigo				/tiendita/producto/	
+registrar_producto					/tiendita/producto	
+actualizar_producto					/tiendita/producto/	
+eliminar_producto					/tiendita/producto/
+
+http://localhost:8097/tiendita/rol
+mostrar_rol						/tiendita/rol	
+buscar_rol_codigo				/tiendita/rol/	
+registrar_rol					/tiendita/rol	
+actualizar_rol					/tiendita/rol/	
+eliminar_rol					/tiendita/rol/
+
+http://localhost:8097/tiendita/ticketpedido
+mostrar_ticketpedido				/tiendita/ticketpedido	
+buscar_ticketpedido_codigo			/tiendita/ticketpedido/	
+registrar_ticketpedido	 			/tiendita/ticketpedido	
+actualizar_ticketpedido				/tiendita/ticketpedido/	
+eliminar_ticketpedido				/tiendita/ticketpedido/
+
+http://localhost:8097/tiendita/usuario
+mostrar_usuario						/tiendita/usuario	
+buscar_usuario_codigo				/tiendita/usuario/	
+registrar_usuario					/tiendita/usuario
+actualizar_usuario					/tiendita/usuario/	
+eliminar_usuario					/tiendita/usuario/
+
+http://localhost:8097/tiendita/usuariorol
+mostrar_usuariorol					/tiendita/usuariorol	
+buscar_usuariorol_codigo			/tiendita/usuariorol/	
+registrar_usuariorol				/tiendita/usuariorol
+actualizar_usuariorol				/tiendita/usuariorol/	
+eliminar_usuariorol					/tiendita/usuariorol/

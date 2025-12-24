@@ -1,0 +1,22 @@
+
+
+Método HTTP			Endpoint					Acción
+GET					/api/producto				Listar todos
+GET					/api/producto/custom		Listar activos (estado = 1)
+GET					/api/producto/{id}			Buscar por ID
+POST				/api/producto				Registrar producto
+PUT					/api/producto				Actualizar producto
+DELETE				/api/producto/{id}			Eliminación lógica
+
+
+http://localhost:8097/almacen/api/producto
+http://localhost:8097/almacen/api/producto/custom
+http://localhost:8097/almacen/api/producto{id}
+
+
+http://localhost:8097/almacen/api/almacenes
+http://localhost:8097/almacen/api/empleados
+http://localhost:8097/almacen/api/movimientos
+http://localhost:8097/almacen/api/productos
+http://localhost:8097/almacen/api/proveedores
+http://localhost:8097/almacen/api/tipo-movimientos

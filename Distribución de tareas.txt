@@ -1,0 +1,91 @@
+-----------------------------------------------------------------
+Integrantes		
+-----------------------------------------------------------------
+1	Arnold		
+2	Edgar		
+3	Edwin		
+4	Pool		
+5	Ronald		
+-----------------------------------------------------------------
+Pruebas de JMetter a "TienditaRest"	
+-----------------------------------------------------------------		
+1	Categoria			Edgar									Realizado										
+2	Cliente				Edgar     								Realizado
+3	DetallePedido		Edgar									Realizado
+4	Distrito			Edgar									Realizado
+5	Producto			Edgar	
+6	Rol					Edgar
+7	TicketPedido		Edgar
+8	Usuario				Edgar
+9	UsuarioRol			Edgar
+-----------------------------------------------------------------			
+Servicio Rest API con las pruebas unitarias "Almacenes Libertad"
+-----------------------------------------------------------------
+Base de dados con 6 Tablas										Realizado		
+	almacenes   												
+	empleados
+	movimientos
+	productos
+	proveedores
+	tipo_movimiento
+
+PACKAGES:														Realizado
+	entity
+		AlmacenesEntity
+		EmpleadosEntity
+		MovimientosEntity
+		ProductosEntity
+		ProveedoresEntity
+		TipoMovimientoEntity
+	respository
+		AlmacenesRepository
+		EmpleadosRepository
+		MovimientosRepository
+		ProductosRepository
+		ProveedoresRepository
+		TipoMovimientoRepository		
+	restcontroller
+		AlmacenesRestController
+		EmpleadosRestController
+		MovimientosRestController
+		ProductosRestController
+		ProveedoresRestController
+		TipopMovimientoRestController	
+	service
+		AlmacenesServcice
+		EmpleadosServcice
+		MovimientosServcice
+		ProductosServcice
+		ProveedoresServcice
+		TipoMovimientoServcice	
+	impl
+		AlmacenesServiceImpl
+		EmpleadosServiceImpl
+		MovimientosServiceImpl
+		ProductosServiceImpl
+		ProveedoresServiceImpl
+		TipoMovimientoServiceImpl			
+
+-----------------------------------------------------------------
+
+-----------------------------------------------------------------
+
+-----------------------------------------------------------------
+Pruebas de JMetter a "Almacenes Libertad"		
+-----------------------------------------------------------------
+1	Almacenes    			Arnold	
+2	Empleados				Arnold
+3	Movimientos				Ronald
+4	Productos				Ronald
+5	Proveedores				Edwin
+6	Tipo_Movimiento			Edwin
+
+-----------------------------------------------------------------
+Pruebas de aplicación con Postman "Almacenes Libertad"				Pool
+-----------------------------------------------------------------
+1	Almacenes		
+2	Empleados		
+3	Movimientos		
+4	Productos		
+5	Proveedores		
+6	Tipo_Movimiento		
