@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan">
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Usuario">
+        <stringProp name="TestPlan.comments">Almacen_Libertad</stringProp>
+        <boolProp name="ThreadGroup.delayedStart">true</boolProp>
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">5</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Almacen">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="findAll">
+            <stringProp name="HTTPSampler.domain">localhost</stringProp>
+            <stringProp name="HTTPSampler.port">8097</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">/almacen/api/almacenes</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="findById">
+            <stringProp name="HTTPSampler.domain">localhost</stringProp>
+            <stringProp name="HTTPSampler.port">8097</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">/almacen/api/almacenes</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Registrar Almacén">
+            <stringProp name="HTTPSampler.domain">localhost</stringProp>
+            <stringProp name="HTTPSampler.port">8097</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">/almacen/api/almacenes</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+ &#xd;
+  &quot;nombre&quot;: &quot;Almacén Test 3&quot;,&#xd;
+  &quot;direccion&quot;: &quot;Av. Prueba 104 - Trujillo&quot;,&#xd;
+  &quot;tipo&quot;: &quot;Sucursal&quot;,&#xd;
+  &quot;estado&quot;: 1&#xd;
+  &#xd;
+}&#xd;
+&#xd;
+&#xd;
+</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Cabecera de Almacen">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="actualizar Almacen">
+            <stringProp name="HTTPSampler.domain">localhost</stringProp>
+            <stringProp name="HTTPSampler.port">8097</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">/almacen/api/almacenes</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+ &#xd;
+  &quot;nombre&quot;: &quot;Almacén Test20&quot;,&#xd;
+  &quot;direccion&quot;: &quot;Av. Prueba 104 - Trujillo&quot;,&#xd;
+  &quot;tipo&quot;: &quot;Sucursal&quot;,&#xd;
+  &quot;estado&quot;: 1&#xd;
+  &#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Cabecera de actualizar ">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Eliminar Almacen">
+            <stringProp name="HTTPSampler.domain">localhost</stringProp>
+            <stringProp name="HTTPSampler.port">8097</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">/almacen/api/almacenes/106</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">DELETE</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+ &#xd;
+  &quot;nombre&quot;: &quot;Almacén Test20&quot;,&#xd;
+  &quot;direccion&quot;: &quot;Av. Prueba 104 - Trujillo&quot;,&#xd;
+  &quot;tipo&quot;: &quot;Sucursal&quot;,&#xd;
+  &quot;estado&quot;: 1&#xd;
+  &#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Cabeza de Eliminar">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Empleado">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="findAll">
+            <stringProp name="HTTPSampler.domain">localhost</stringProp>
+            <stringProp name="HTTPSampler.port">8097</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">/almacen/api/empleados</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="findById">
+            <stringProp name="HTTPSampler.domain">localhost</stringProp>
+            <stringProp name="HTTPSampler.port">8097</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">/almacen/api/empleados</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Regristrar Empleado">
+            <stringProp name="HTTPSampler.domain">localhost</stringProp>
+            <stringProp name="HTTPSampler.port">8097</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">/almacen/api/empleados</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value"> {&#xd;
+ &#xd;
+  &quot;nombre&quot;: &quot;Juan Pérez 2&quot;,&#xd;
+    &quot;cargo&quot;: &quot;subJefe de Almacén&quot;,&#xd;
+    &quot;estado&quot;: 1&#xd;
+  &#xd;
+}&#xd;
+&#xd;
+</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Cabecera de Empleados">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Actualizar Empleado">
+            <stringProp name="HTTPSampler.domain">localhost</stringProp>
+            <stringProp name="HTTPSampler.port">8097</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">/almacen/api/empleados</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value"> {&#xd;
+ &#xd;
+  &quot;nombre&quot;: &quot;Marta Pérez &quot;,&#xd;
+    &quot;cargo&quot;: &quot;subJefe de Almacén&quot;,&#xd;
+    &quot;estado&quot;: 3&#xd;
+  &#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Cabecera de actualizacion">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Eliminacion de Empleado">
+            <stringProp name="HTTPSampler.domain">localhost</stringProp>
+            <stringProp name="HTTPSampler.port">8097</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">/almacen/api/empleados/78</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">DELETE</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+ &#xd;
+  &quot;nombre&quot;: &quot;Marta Pérez &quot;,&#xd;
+    &quot;cargo&quot;: &quot;subJefe de Almacén&quot;,&#xd;
+    &quot;estado&quot;: 3&#xd;
+  &#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Cabecera de eliminar">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Movimiento">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="findAll">
+            <stringProp name="HTTPSampler.domain">localhost</stringProp>
+            <stringProp name="HTTPSampler.port">8097</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">/almacen/api/empleados</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="findById">
+            <stringProp name="HTTPSampler.domain">localhost</stringProp>
+            <stringProp name="HTTPSampler.port">8097</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">/almacen/api/empleados</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Regristrar Movimiento">
+            <stringProp name="HTTPSampler.domain">localhost</stringProp>
+            <stringProp name="HTTPSampler.port">8097</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">/almacen/api/movimientos</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+    &quot;idMovimiento&quot;: 1,&#xd;
+    &quot;tipoMovimiento&quot;: {&#xd;
+        &quot;idTipoMovimiento&quot;: 1,&#xd;
+        &quot;nombre&quot;: &quot;ENTRADA&quot;&#xd;
+    },&#xd;
+    &quot;fecha&quot;: &quot;2025-12-24T10:49:03&quot;,&#xd;
+    &quot;producto&quot;: {&#xd;
+        &quot;idProducto&quot;: 1,&#xd;
+        &quot;nombre&quot;: &quot;Laptop Lenovo ThinkPad&quot;,&#xd;
+        &quot;descripcion&quot;: &quot;Intel i5, 16GB RAM, 512GB SSD&quot;,&#xd;
+        &quot;precioCompra&quot;: 2800.00,&#xd;
+        &quot;precioVenta&quot;: 3600.00,&#xd;
+        &quot;estado&quot;: 1,&#xd;
+        &quot;createdAt&quot;: &quot;2025-12-24T10:48:48&quot;,&#xd;
+        &quot;updatedAt&quot;: &quot;2025-12-24T10:48:48&quot;&#xd;
+    },&#xd;
+    &quot;cantidad&quot;: 10,&#xd;
+    &quot;almacenOrigen&quot;: null,&#xd;
+    &quot;almacenDestino&quot;: {&#xd;
+        &quot;idAlmacen&quot;: 1,&#xd;
+        &quot;nombre&quot;: &quot;Almacén Test 1&quot;,&#xd;
+        &quot;direccion&quot;: &quot;Av. Prueba 101 - Trujillo&quot;,&#xd;
+        &quot;tipo&quot;: &quot;Sucursal&quot;,&#xd;
+        &quot;estado&quot;: 0,&#xd;
+        &quot;createdAt&quot;: &quot;2025-12-24T10:48:48&quot;&#xd;
+    },&#xd;
+    &quot;empleado&quot;: {&#xd;
+        &quot;idEmpleado&quot;: 5,&#xd;
+        &quot;nombre&quot;: &quot;Luis Fernández&quot;,&#xd;
+        &quot;cargo&quot;: &quot;Supervisor de Compras&quot;,&#xd;
+        &quot;estado&quot;: 1,&#xd;
+        &quot;createdAt&quot;: &quot;2025-12-24T10:48:48&quot;&#xd;
+    },&#xd;
+    &quot;proveedor&quot;: {&#xd;
+        &quot;idProveedor&quot;: 1,&#xd;
+        &quot;nombre&quot;: &quot;TechWorld SAC&quot;,&#xd;
+        &quot;contacto&quot;: &quot;ventas@techworld.pe&quot;,&#xd;
+        &quot;ubicacion&quot;: &quot;Trujillo&quot;,&#xd;
+        &quot;representante&quot;: &quot;Carlos Méndez&quot;,&#xd;
+        &quot;estado&quot;: 1,&#xd;
+        &quot;createdAt&quot;: &quot;2025-12-24T10:48:48&quot;&#xd;
+    },&#xd;
+    &quot;referencia&quot;: &quot;Compra Final Lenovo&quot;&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="cabecera de movimiento">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Actualizar Movimiento">
+            <stringProp name="HTTPSampler.domain">localhost</stringProp>
+            <stringProp name="HTTPSampler.port">8097</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">/almacen/api/movimientos</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+    &quot;idMovimiento&quot;: 4,&#xd;
+    &quot;tipoMovimiento&quot;: {&#xd;
+        &quot;idTipoMovimiento&quot;: 1,&#xd;
+        &quot;nombre&quot;: &quot;ENTRADA&quot;&#xd;
+    },&#xd;
+    &quot;fecha&quot;: &quot;2025-12-24T10:49:03&quot;,&#xd;
+    &quot;producto&quot;: {&#xd;
+        &quot;idProducto&quot;: 1,&#xd;
+        &quot;nombre&quot;: &quot;Laptop Lenovo ultima generacion&quot;,&#xd;
+        &quot;descripcion&quot;: &quot;Intel i5, 16GB RAM, 512GB SSD&quot;,&#xd;
+        &quot;precioCompra&quot;: 2800.00,&#xd;
+        &quot;precioVenta&quot;: 3600.00,&#xd;
+        &quot;estado&quot;: 1,&#xd;
+        &quot;createdAt&quot;: &quot;2025-12-24T10:48:48&quot;,&#xd;
+        &quot;updatedAt&quot;: &quot;2025-12-24T10:48:48&quot;&#xd;
+    },&#xd;
+    &quot;cantidad&quot;: 10,&#xd;
+    &quot;almacenOrigen&quot;: null,&#xd;
+    &quot;almacenDestino&quot;: {&#xd;
+        &quot;idAlmacen&quot;: 1,&#xd;
+        &quot;nombre&quot;: &quot;Almacén Test 1&quot;,&#xd;
+        &quot;direccion&quot;: &quot;Av. Prueba 101 - Trujillo&quot;,&#xd;
+        &quot;tipo&quot;: &quot;Sucursal&quot;,&#xd;
+        &quot;estado&quot;: 0,&#xd;
+        &quot;createdAt&quot;: &quot;2025-12-24T10:48:48&quot;&#xd;
+    },&#xd;
+    &quot;empleado&quot;: {&#xd;
+        &quot;idEmpleado&quot;: 5,&#xd;
+        &quot;nombre&quot;: &quot;Luis Fernández&quot;,&#xd;
+        &quot;cargo&quot;: &quot;Supervisor de Compras&quot;,&#xd;
+        &quot;estado&quot;: 1,&#xd;
+        &quot;createdAt&quot;: &quot;2025-12-24T10:48:48&quot;&#xd;
+    },&#xd;
+    &quot;proveedor&quot;: {&#xd;
+        &quot;idProveedor&quot;: 1,&#xd;
+        &quot;nombre&quot;: &quot;TechWorld SAC&quot;,&#xd;
+        &quot;contacto&quot;: &quot;ventas@techworld.pe&quot;,&#xd;
+        &quot;ubicacion&quot;: &quot;Trujillo&quot;,&#xd;
+        &quot;representante&quot;: &quot;Carlos Méndez&quot;,&#xd;
+        &quot;estado&quot;: 1,&#xd;
+        &quot;createdAt&quot;: &quot;2025-12-24T10:48:48&quot;&#xd;
+    },&#xd;
+    &quot;referencia&quot;: &quot;Compra Final Lenovo&quot;&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Cabecera Actualizar">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Eliminar Movimiento">
+            <stringProp name="HTTPSampler.domain">localhost</stringProp>
+            <stringProp name="HTTPSampler.port">8097</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.path">/almacen/api/movimientos/3</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">DELETE</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+     &quot;tipoMovimiento&quot;: {&#xd;
+      &quot;idTipoMovimiento&quot;: 4,&#xd;
+      &quot;nombre&quot;: &quot;Salida&quot;&#xd;
+    },&#xd;
+    &quot;fecha&quot;: &quot;2025-12-24T10:49:03&quot;,&#xd;
+    &quot;producto&quot;: {&#xd;
+      &quot;idProducto&quot;: 1,&#xd;
+      &quot;nombre&quot;: &quot;Laptop Lenovo ThinkPad&quot;,&#xd;
+      &quot;descripcion&quot;: &quot;Intel i5, 16GB RAM, 512GB SSD&quot;,&#xd;
+      &quot;precioCompra&quot;: 1800,&#xd;
+      &quot;precioVenta&quot;: 6600,&#xd;
+      &quot;estado&quot;: 1,&#xd;
+      &quot;createdAt&quot;: &quot;2025-12-24T10:48:48&quot;,&#xd;
+      &quot;updatedAt&quot;: &quot;2025-12-24T10:48:48&quot;&#xd;
+    },&#xd;
+    &quot;cantidad&quot;: 10,&#xd;
+    &quot;almacenOrigen&quot;: null,&#xd;
+    &quot;almacenDestino&quot;: {&#xd;
+      &quot;idAlmacen&quot;: 1,&#xd;
+      &quot;nombre&quot;: &quot;Almacén Test 1&quot;,&#xd;
+      &quot;direccion&quot;: &quot;Av. Prueba 101 - Trujillo&quot;,&#xd;
+      &quot;tipo&quot;: &quot;Sucursal&quot;,&#xd;
+      &quot;estado&quot;: 1,&#xd;
+      &quot;createdAt&quot;: &quot;2025-12-24T10:48:48&quot;&#xd;
+    },&#xd;
+    &quot;empleado&quot;: {&#xd;
+      &quot;idEmpleado&quot;: 5,&#xd;
+      &quot;nombre&quot;: &quot;Luis Fernández&quot;,&#xd;
+      &quot;cargo&quot;: &quot;Supervisor de Compras&quot;,&#xd;
+      &quot;estado&quot;: 1,&#xd;
+      &quot;createdAt&quot;: &quot;2025-12-24T10:48:48&quot;&#xd;
+    },&#xd;
+    &quot;proveedor&quot;: {&#xd;
+      &quot;idProveedor&quot;: 1,&#xd;
+      &quot;nombre&quot;: &quot;TechWorld SAC&quot;,&#xd;
+      &quot;contacto&quot;: &quot;ventas@techworld.pe&quot;,&#xd;
+      &quot;ubicacion&quot;: &quot;Lima&quot;,&#xd;
+      &quot;representante&quot;: &quot;Carlos Méndez&quot;,&#xd;
+      &quot;estado&quot;: 1,&#xd;
+      &quot;createdAt&quot;: &quot;2025-12-24T10:48:48&quot;&#xd;
+    },&#xd;
+    &quot;referencia&quot;: &quot;Compra inicial Lenovo tg&quot;</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Cabcera de eliminacion">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Reporte de tabla">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="Resultados de Arbol">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults">
+          <stringProp name="HTTPSampler.port">8097</stringProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+        </ConfigTestElement>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
