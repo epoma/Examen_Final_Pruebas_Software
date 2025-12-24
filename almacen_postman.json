@@ -1,0 +1,1055 @@
+{
+	"info": {
+		"_postman_id": "a471b10c-7984-496a-ab3f-58c8ea917cbc",
+		"name": "almacen-rest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50795848",
+		"_collection_link": "https://pooljamep-3157110.postman.co/workspace/PoolJamep's-Workspace~7ce28b60-a192-46a9-8141-1a0c351fca10/collection/50795848-a471b10c-7984-496a-ab3f-58c8ea917cbc?action=share&source=collection_link&creator=50795848"
+	},
+	"item": [
+		{
+			"name": "almacenes",
+			"item": [
+				{
+					"name": "findAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \r\n        \"nombre\": \"Puerto Norte\",\r\n        \"ubicacion\": \"SMP\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/almacenes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"almacenes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllCustom",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/almacenes/custom",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"almacenes",
+								"custom"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/almacenes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"almacenes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"idAlmacen\": 8,\r\n        \"nombre\": \"Sucursal\",\r\n        \"direccion\": \"Av. Ermitaño - Lima\",\r\n        \"tipo\": \"Sucursal\",\r\n        \"estado\": 1,\r\n        \"createdAt\": \"2025-12-24T09:53:49\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/almacenes/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"almacenes",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"idAlmacen\": 8,\r\n        \"nombre\": \"Sucursal\",\r\n        \"direccion\": \"Av. Ermitaño - Lima\",\r\n        \"tipo\": \"Sucursal\",\r\n        \"estado\": 1,\r\n        \"createdAt\": \"2025-12-24T09:53:49\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/almacenes/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"almacenes",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  \"nombre\": \"Almacén Central\",\r\n  \"direccion\": \"Lima Centro\",\r\n  \"tipo\": \"CENTRAL\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/almacenes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"almacenes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "productos",
+			"item": [
+				{
+					"name": "findAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"codigo\": 5,\r\n        \"nombre\": \"SMP\",\r\n        \"estado\": true\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllCustom",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/productos/custom",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"productos",
+								"custom"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/productos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"productos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"idProducto\": 8,\r\n        \"nombre\": \"Laptop Xioami\",\r\n        \"descripcion\": \"Intel i3, 16GB RAM, 120GB SSD\",\r\n        \"precioCompra\": 2700.00,\r\n        \"precioVenta\": 2800.00,\r\n        \"estado\": 0,\r\n        \"createdAt\": \"2025-12-24T15:38:49\",\r\n        \"updatedAt\": \"2025-12-24T15:38:49\"\r\n    }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/productos/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"productos",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"idProducto\": 8,\r\n        \"nombre\": \"Laptop Xioami\",\r\n        \"descripcion\": \"Intel i3, 16GB RAM, 120GB SSD\",\r\n        \"precioCompra\": 2700.00,\r\n        \"precioVenta\": 2800.00,\r\n        \"estado\": 0,\r\n        \"createdAt\": \"2025-12-24T15:38:49\",\r\n        \"updatedAt\": \"2025-12-24T15:38:49\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/productos/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"productos",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "      {\r\n        \"nombre\": \"Laptop Acer\",\r\n        \"descripcion\": \"Intel i5, 8GB RAM, 480GB SSD\",\r\n        \"precioCompra\": 1700.00,\r\n        \"precioVenta\": 2600.00\r\n        \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"productos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "empleados",
+			"item": [
+				{
+					"name": "findAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"codigo\": 5,\r\n        \"nombre\": \"SMP\",\r\n        \"estado\": true\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/empleados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"empleados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllCustom",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/empleados/custom",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"empleados",
+								"custom"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/empleados/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"empleados",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"idEmpleado\": 6,\r\n        \"nombre\": \"Rafael\",\r\n        \"cargo\": \"Operador\",\r\n        \"estado\": 1,\r\n        \"createdAt\": \"2025-12-24T11:10:16\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/empleados/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"empleados",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"idEmpleado\": 6,\r\n        \"nombre\": \"Rafael\",\r\n        \"cargo\": \"Operador\",\r\n        \"estado\": 1,\r\n        \"createdAt\": \"2025-12-24T11:10:16\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/empleados/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"empleados",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nombre\": \"Jamep Rafael\",\r\n        \"cargo\": \"Administrador\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/empleados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"empleados"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "movimientos",
+			"item": [
+				{
+					"name": "findAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"codigo\": 5,\r\n        \"nombre\": \"SMP\",\r\n        \"estado\": true\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/movimientos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"movimientos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllCustom",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/movimientos/custom",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"movimientos",
+								"custom"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/movimientos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"movimientos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"idMovimiento\": 12,\r\n        \"tipoMovimiento\": {\r\n            \"idTipoMovimiento\": 1,\r\n            \"nombre\": \"ACTUALIZADO_TEST\"\r\n        },\r\n        \"fecha\": \"2025-12-24T11:48:35\",\r\n        \"producto\": {\r\n            \"idProducto\": 1,\r\n            \"nombre\": \"Producto Eliminado Test\",\r\n            \"descripcion\": null,\r\n            \"precioCompra\": null,\r\n            \"precioVenta\": null,\r\n            \"estado\": 0,\r\n            \"createdAt\": \"2025-12-24T09:53:49\",\r\n            \"updatedAt\": \"2025-12-24T11:48:36\"\r\n        },\r\n        \"cantidad\": 5,\r\n        \"almacenOrigen\": null,\r\n        \"almacenDestino\": {\r\n            \"idAlmacen\": 1,\r\n            \"nombre\": \"Almacén Actualizado Test\",\r\n            \"direccion\": \"Av. Actualización 456 - Lima\",\r\n            \"tipo\": \"Sucursal\",\r\n            \"estado\": 1,\r\n            \"createdAt\": \"2025-12-24T09:53:49\"\r\n        },\r\n        \"empleado\": {\r\n            \"idEmpleado\": 1,\r\n            \"nombre\": \"Empleado Eliminado Test\",\r\n            \"cargo\": null,\r\n            \"estado\": 0,\r\n            \"createdAt\": \"2025-12-24T09:53:49\"\r\n        },\r\n        \"proveedor\": {\r\n            \"idProveedor\": 1,\r\n            \"nombre\": \"Proveedor Eliminado Test\",\r\n            \"contacto\": null,\r\n            \"ubicacion\": null,\r\n            \"representante\": null,\r\n            \"estado\": 0,\r\n            \"createdAt\": \"2025-12-24T09:53:49\"\r\n        },\r\n        \"referencia\": \"Prueba Movimiento Unit Test\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/movimientos/12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"movimientos",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"idMovimiento\": 13,\r\n        \"tipoMovimiento\": {\r\n            \"idTipoMovimiento\": 1,\r\n            \"nombre\": \"ACTUALIZADO_TEST\"\r\n        },\r\n        \"fecha\": \"2025-12-24T11:48:35\",\r\n        \"producto\": {\r\n            \"idProducto\": 1,\r\n            \"nombre\": \"Producto Eliminado Test\",\r\n            \"descripcion\": null,\r\n            \"precioCompra\": null,\r\n            \"precioVenta\": null,\r\n            \"estado\": 0,\r\n            \"createdAt\": \"2025-12-24T09:53:49\",\r\n            \"updatedAt\": \"2025-12-24T11:48:36\"\r\n        },\r\n        \"cantidad\": 5,\r\n        \"almacenOrigen\": null,\r\n        \"almacenDestino\": {\r\n            \"idAlmacen\": 1,\r\n            \"nombre\": \"Almacén Actualizado Test\",\r\n            \"direccion\": \"Av. Actualización 456 - Lima\",\r\n            \"tipo\": \"Sucursal\",\r\n            \"estado\": 1,\r\n            \"createdAt\": \"2025-12-24T09:53:49\"\r\n        },\r\n        \"empleado\": {\r\n            \"idEmpleado\": 1,\r\n            \"nombre\": \"Empleado Eliminado Test\",\r\n            \"cargo\": null,\r\n            \"estado\": 0,\r\n            \"createdAt\": \"2025-12-24T09:53:49\"\r\n        },\r\n        \"proveedor\": {\r\n            \"idProveedor\": 1,\r\n            \"nombre\": \"Proveedor Eliminado Test\",\r\n            \"contacto\": null,\r\n            \"ubicacion\": null,\r\n            \"representante\": null,\r\n            \"estado\": 0,\r\n            \"createdAt\": \"2025-12-24T09:53:49\"\r\n        },\r\n        \"referencia\": \"Prueba Movimiento Unit Test\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/movimientos/13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"movimientos",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \r\n        \"tipoMovimiento\": {\r\n            \"idTipoMovimiento\": 1,\r\n            \"nombre\": \"ACTUALIZADO_TEST\"\r\n        },\r\n        \"fecha\": \"2025-12-24T11:48:35\",\r\n        \"producto\": {\r\n            \"idProducto\": 1,\r\n            \"nombre\": \"Producto Eliminado Test\",\r\n            \"descripcion\": null,\r\n            \"precioCompra\": null,\r\n            \"precioVenta\": null,\r\n            \"estado\": 0,\r\n            \"createdAt\": \"2025-12-24T09:53:49\",\r\n            \"updatedAt\": \"2025-12-24T11:48:36\"\r\n        },\r\n        \"cantidad\": 5,\r\n        \"almacenOrigen\": null,\r\n        \"almacenDestino\": {\r\n            \"idAlmacen\": 1,\r\n            \"nombre\": \"Almacén Actualizado Test\",\r\n            \"direccion\": \"Av. Actualización 456 - Lima\",\r\n            \"tipo\": \"Sucursal\",\r\n            \"estado\": 1,\r\n            \"createdAt\": \"2025-12-24T09:53:49\"\r\n        },\r\n        \"empleado\": {\r\n            \"idEmpleado\": 1,\r\n            \"nombre\": \"Empleado Eliminado Test\",\r\n            \"cargo\": null,\r\n            \"estado\": 0,\r\n            \"createdAt\": \"2025-12-24T09:53:49\"\r\n        },\r\n        \"proveedor\": {\r\n            \"idProveedor\": 1,\r\n            \"nombre\": \"Proveedor Eliminado Test\",\r\n            \"contacto\": null,\r\n            \"ubicacion\": null,\r\n            \"representante\": null,\r\n            \"estado\": 0,\r\n            \"createdAt\": \"2025-12-24T09:53:49\"\r\n        },\r\n        \"referencia\": \"Prueba Software\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/movimientos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"movimientos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "proveedores",
+			"item": [
+				{
+					"name": "findAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"codigo\": 5,\r\n        \"nombre\": \"SMP\",\r\n        \"estado\": true\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/proveedores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"proveedores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllCustom",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/proveedores/custom",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"proveedores",
+								"custom"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/proveedores/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"proveedores",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"idProveedor\": 1,\r\n        \"nombre\": \"Proveedor Eliminado Test\",\r\n        \"contacto\": \"jorge@cescopr.pe\",\r\n        \"ubicacion\": \"Lima\",\r\n        \"representante\": \"Pool Chavez\",\r\n        \"estado\": 0,\r\n        \"createdAt\": \"2025-12-24T09:53:49\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/proveedores/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"proveedores",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"idProveedor\": 1,\r\n        \"nombre\": \"Proveedor Eliminado Test\",\r\n        \"contacto\": \"jorge@cescopr.pe\",\r\n        \"ubicacion\": \"Lima\",\r\n        \"representante\": \"Pool Chavez\",\r\n        \"estado\": 0,\r\n        \"createdAt\": \"2025-12-24T09:53:49\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/proveedores/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"proveedores",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \r\n        \"nombre\": \"Proveedor ermitaño\",\r\n        \"contacto\": \"pool\",\r\n        \"ubicacion\": \"Los olivos\",\r\n        \"representante\": \"Ana Chavez\",\r\n        \"estado\": 0,\r\n        \"createdAt\": \"2025-12-24T09:53:49\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/proveedores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"proveedores"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tipo-movimientos",
+			"item": [
+				{
+					"name": "findAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"codigo\": 5,\r\n        \"nombre\": \"SMP\",\r\n        \"estado\": true\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/tipo-movimientos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"tipo-movimientos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllCustom",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/tipo-movimientos/custom",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"tipo-movimientos",
+								"custom"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/tipo-movimientos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"tipo-movimientos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"idTipoMovimiento\": 1,\r\n        \"nombre\": \"EXAMEN\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/tipo-movimientos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"tipo-movimientos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idTipoMovimiento\": 9,\r\n    \"nombre\": \"POSPUESTO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/tipo-movimientos/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"tipo-movimientos",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \r\n        \"nombre\": \"POSPUESTO\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8097/almacen/api/tipo-movimientos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"almacen",
+								"api",
+								"tipo-movimientos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
